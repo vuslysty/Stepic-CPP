@@ -17,7 +17,7 @@ int main()
     int d = (b);
     int const * p1 = (pa);
     int * const * p2 = (&pa);
-    int const ** p3 = (&pa);
+    // int const ** p3 = (&pa);
     int const * const * p4 = (&pa);
 
     
