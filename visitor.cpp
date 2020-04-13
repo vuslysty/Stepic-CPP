@@ -68,12 +68,36 @@ struct PrintVisitor : Visitor {
 	}
 };
 
-// int main()
-// {
-// 	Expression *sub = new BinaryOperation(new Number(10.0), '*', new Number(15.0));
-// 	Expression *expr = new BinaryOperation(new Number(2.0), '+', sub);
-// 	PrintVisitor visitor;
-// 	expr->visit(&visitor);
+struct PrintOperationType : Visitor {
 
-// 	return 0;
-// }
+	void visitNumber(Number const * number) {
+		std::cout << "Number Type visitor called" << std::endl;
+		PrintVisitor printVisitor;
+		number->visit(&printVisitor);
+		std::cout << std::endl;
+	}
+
+	void visitBinaryOperation(BinaryOperation const * bop) {
+		std::cout << "Binary Type visitor called" << std::endl;
+		PrintVisitor printVisitor;
+		bop->visit(&printVisitor);
+		std::cout << std::endl;
+	}
+
+};
+
+int main()
+{
+	Expression *sub = new BinaryOperation(new Number(10.0), '*', new Number(15.0));
+	Expression *expr = new BinaryOperation(new Number(2.0), '+', sub);
+	// PrintVisitor printVisitor;
+	// expr->visit(&printVisitor);
+	// std::cout << std::endl;
+	// std::cout << std::endl;
+
+	Expression *num = new Number(23);
+	PrintOperationType op_type;
+	num->visit(&op_type);
+
+	return 0;
+}
