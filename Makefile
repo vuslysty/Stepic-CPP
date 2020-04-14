@@ -1,4 +1,5 @@
+FLAFS=$(flags)
 
 all:
-	@g++ $(file) -std=c++11 -o prog
+	@g++ $(file) -std=c++11 -o prog $(FLAFS)
 	@./prog

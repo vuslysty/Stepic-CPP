@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:re="http://purl.org/atompub/rank/1.0">
+    <title type="text">Newest questions tagged c&#x2B;&#x2B; - Stack Overflow</title>
+    <link rel="self" href="https://stackoverflow.com/feeds/tag?tagnames=c%2b%2b&amp;sort=newest" type="application/atom+xml" />
+    <link rel="alternate" href="https://stackoverflow.com/questions/tagged/?tagnames=c%2b%2b&amp;sort=newest" type="text/html" />
+    <subtitle>most recent 30 from stackoverflow.com</subtitle>
+    <updated>2020-04-14T12:06:16Z</updated>
+    <id>https://stackoverflow.com/feeds/tag?tagnames=c%2b%2b&amp;sort=newest</id>
+    <creativeCommons:license>https://creativecommons.org/licenses/by-sa/4.0/rdf</creativeCommons:license> 
+    <entry>
+        <id>https://stackoverflow.com/q/61207173</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">OpenGL glm::ortho() hides all my game objects in a 2D game</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="opengl" />
+            <category scheme="https://stackoverflow.com/tags" term="glm-math" />
+        <author>
+            <name>Gian Marco Cialdi</name>
+            <uri>https://stackoverflow.com/users/11947589</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61207173/opengl-glmortho-hides-all-my-game-objects-in-a-2d-game" />
+        <published>2020-04-14T12:01:24Z</published>
+        <updated>2020-04-14T12:01:24Z</updated>
+        <summary type="html">
+            &lt;p&gt;I know this might have been asked many times, but I&#x27;ve read many posts on StackOverflow and yet I haven&#x27;t found the answer to my problem.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I&#x27;m following this tutorial: &lt;a href=&quot;https://learnopengl.com/In-Practice/2D-Game/Rendering-Sprites&quot; rel=&quot;nofollow noreferrer&quot;&gt;https://learnopengl.com/In-Practice/2D-Game/Rendering-Sprites&lt;/a&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I am not trying to make the tutorial&#x27;s game (Breakout) but instead a simpler one (Pong), and I&#x27;m not using the same tutorial&#x27;s classes.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Here is a part of my code:&lt;br&gt;&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;// GameObject.cpp&#xA;...&#xA;void GameObject::render(glm::vec2 position, glm::vec2 size) &#xA;{&#xA;    _model = glm::mat4(1.f);&#xA;    _model = glm::translate(_model, glm::vec3(position, 0.f));&#xA;    _model = glm::translate(_model, glm::vec3(0.5f * size.x, 0.5f * size.y, 0.f));&#xA;    _model = glm::rotate(_model, glm::radians(_rotation.x), glm::vec3(1.f, 0.f, 0.f));&#xA;    _model = glm::rotate(_model, glm::radians(_rotation.y), glm::vec3(0.f, 1.f, 0.f));  &#xA;    _model = glm::rotate(_model, glm::radians(_rotation.z), glm::vec3(0.f, 0.f, 1.f));&#xA;    _model = glm::translate(_model, glm::vec3(-0.5f * size.x, -0.5f * size.y, 0.0f));&#xA;    _shader.set_mat4(&quot;model&quot;, _model); &#xA;    glBindVertexArray(_VAO);&#xA;    glDrawArrays(GL_TRIANGLES, 0, 6);&#xA;    glBindVertexArray(0);&#xA;}&#xA;...&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;    // main.cpp&#xA;    ...&#xA;    Shader _shader(&quot;./res/shaders/test.vert&quot;, &quot;./res/shaders/test.frag&quot;);&#xA;    Quad q;&#xA;    glm::mat4 projection(1.f);&#xA;    projection = glm::ortho(0.f, 800.f, 600.f, 0.f, -1.0f, 1.0f);&#xA;    _shader.set_mat4(&quot;projection&quot;, projection);&#xA;    GameObject ob(q, _shader);&#xA;&#xA;    while (!glfwWindowShouldClose(window))&#xA;    {&#xA;        ...&#xA;        ob.render(glm::vec2(0.f, 0.f), glm::vec2(800.f, 600.f));&#xA;    }&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;The problem is that when I use glm::ortho I can&#x27;t see my objects. What I&#x27;m trying to find are the parameters for glm::ortho (I guess the problem is that). Thanks in advance.&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61207139</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">epoll_wait doesn&#x27;t wake up until pressing on enter</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="epoll" />
+        <author>
+            <name>Yaron Israeli</name>
+            <uri>https://stackoverflow.com/users/4213849</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61207139/epoll-wait-doesnt-wake-up-until-pressing-on-enter" />
+        <published>2020-04-14T11:58:56Z</published>
+        <updated>2020-04-14T12:03:04Z</updated>
+        <summary type="html">
+            &lt;p&gt;I&#x27;m new with epoll. &#xA;My code is working fine. The epoll is storing my file-descriptor and wait until file-descriptor is &quot;ready&quot;.&#xA;But, for some reason it will not wake up until I will press on Enter (even though data has already received to fd, and after enter I will immediately see all data that has been sent before).&#xA;After one enter it will work as expected (no enters needed and when fd is ready again it will wake up again).&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Here is am essence of my code:&lt;/p&gt;&#xA;&#xA;&lt;pre class=&quot;lang-c prettyprint-override&quot;&gt;&lt;code&gt;    int nEventCountReady = 0;&#xA;    epoll_event event, events[EPOLL_MAX_EVENTS];&#xA;    int epoll_fd = epoll_create1(0);&#xA;&#xA;    if(epoll_fd == -1)&#xA;    {&#xA;        std::cout &amp;lt;&amp;lt; &quot;Error: Failed to create EPoll&quot; &amp;lt;&amp;lt; std::endl;&#xA;        return ;&#xA;    }&#xA;&#xA;    event.events = EPOLLIN;&#xA;    event.data.fd = myfd;&#xA;&#xA;    if(epoll_ctl(epoll_fd, EPOLL_CTL_ADD, 0, &amp;amp;event))&#xA;    {&#xA;        fprintf(stderr, &quot;Failed to add file descriptor to epoll\n&quot;);&#xA;        close(epoll_fd);&#xA;        return ;&#xA;    }&#xA;&#xA;    while(true)&#xA;    {&#xA;        std::cout &amp;lt;&amp;lt; &quot;Waiting for messages&quot; &amp;lt;&amp;lt; std::endl;&#xA;        nEventCountReady = epoll_wait(epoll_fd, events, EPOLL_MAX_EVENTS, 30000); &amp;lt;&amp;lt; Stuck until Enter will be pressed (at first while loop)&#xA;        for(int i=0; i&amp;lt;nEventCountReady; i&#x2B;&#x2B;)&#xA;        {&#xA;            msgrcv(events[i].data.fd, oIpCMessageContent, sizeof(SIPCMessageContent), 1, 0);&#xA;            std::cout &amp;lt;&amp;lt; oIpCMessageContent.buff &amp;lt;&amp;lt; std::endl;&#xA;        }&#xA;    }&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61207101</id>
+        <re:rank scheme="https://stackoverflow.com">1</re:rank>
+        <title type="text">Why when a constructor has a reference to string does not printed correctly?</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="string" />
+            <category scheme="https://stackoverflow.com/tags" term="reference" />
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;17" />
+            <category scheme="https://stackoverflow.com/tags" term="stdmove" />
+        <author>
+            <name>stelios</name>
+            <uri>https://stackoverflow.com/users/587377</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61207101/why-when-a-constructor-has-a-reference-to-string-does-not-printed-correctly" />
+        <published>2020-04-14T11:56:19Z</published>
+        <updated>2020-04-14T12:03:33Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have the following code and it does not print the correct string when its destructor is called&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;struct Tracer {&#xA;&#xA; Tracer( const std::string&amp;amp; name_in)&#xA; : name{ name_in } {&#xA;  std::cout &amp;lt;&amp;lt; name &amp;lt;&amp;lt; &quot; constructed.\n&quot;;&#xA; }&#xA;&#xA;~Tracer() {&#xA; std::cout &amp;lt;&amp;lt; name &amp;lt;&amp;lt; &quot; destructed.\n&quot;;&#xA;}&#xA;&#xA;private:&#xA;&#xA;const std::string&amp;amp; name;&#xA;};&#xA;&#xA;Tracer static_tracer{ &quot;static Tracer&quot; };&#xA;&#xA;int main() {&#xA;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Output:&#xA;static Tracer constructed.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&#xFFFD;1&#xFFFD;Q&#xFFFD;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;But the following code works as expected:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;Tracer( std::string name_in)&#xA; : name{ std:move(name_in) } {&#xA; std::cout &amp;lt;&amp;lt; name &amp;lt;&amp;lt; &quot; constructed.\n&quot;;&#xA; }&#xA;&#xA;private:&#xA;std::string name;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Output:&#xA;static Tracer constructed.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;static Tracer destructed.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Or when a stringview or simple stings are used.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;How did we lost the reference to the string during the program termination in the first code?&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Also shouldn&#x27;t we loose the reference to the string using the move() since it has a constructor scope?&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Thanks!&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61207060</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">How to get the memory used by a multidimensional vector</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="optimization" />
+            <category scheme="https://stackoverflow.com/tags" term="memory" />
+            <category scheme="https://stackoverflow.com/tags" term="vector" />
+            <category scheme="https://stackoverflow.com/tags" term="neural-network" />
+        <author>
+            <name>finlay morrison</name>
+            <uri>https://stackoverflow.com/users/13185261</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61207060/how-to-get-the-memory-used-by-a-multidimensional-vector" />
+        <published>2020-04-14T11:54:19Z</published>
+        <updated>2020-04-14T11:59:24Z</updated>
+        <summary type="html">
+            &lt;p&gt;I am currently writing some code to create a neural network, and i am trying to make it as optimised as possible. I want to be able to get the amount of memory consumed  by a object of type Network, since memory usage is very important in order to avoid cache misses. I tried using sizeof(), however this does not work, since, i assume, that vectors store the values on the heap, so the sizeof() function will just tell me the size of the pointers. Here is my code so far.&lt;/p&gt;&#xA;&#xA;&lt;pre class=&quot;lang-cpp prettyprint-override&quot;&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;&#xA;#include &amp;lt;vector&amp;gt;&#xA;#include &amp;lt;random&amp;gt;&#xA;#include &amp;lt;chrono&amp;gt;&#xA;&#xA;class Timer&#xA;{&#xA;private:&#xA;    std::chrono::time_point&amp;lt;std::chrono::high_resolution_clock&amp;gt; start_time;&#xA;public:&#xA;    Timer(bool auto_start=true)&#xA;    {&#xA;        if (auto_start)&#xA;        {&#xA;            start();&#xA;        }&#xA;    }&#xA;    void start()&#xA;    {&#xA;        start_time = std::chrono::high_resolution_clock::now();&#xA;    }&#xA;    float get_duration()&#xA;    {&#xA;        std::chrono::duration&amp;lt;float&amp;gt; duration = std::chrono::high_resolution_clock::now() - start_time;&#xA;        return duration.count();&#xA;    }&#xA;};&#xA;&#xA;class Network&#xA;{&#xA;public:&#xA;    std::vector&amp;lt;std::vector&amp;lt;std::vector&amp;lt;float&amp;gt;&amp;gt;&amp;gt; weights;&#xA;    std::vector&amp;lt;std::vector&amp;lt;std::vector&amp;lt;float&amp;gt;&amp;gt;&amp;gt; deriv_weights;&#xA;    std::vector&amp;lt;std::vector&amp;lt;float&amp;gt;&amp;gt; biases;&#xA;    std::vector&amp;lt;std::vector&amp;lt;float&amp;gt;&amp;gt; deriv_biases;&#xA;    std::vector&amp;lt;std::vector&amp;lt;float&amp;gt;&amp;gt; activations;&#xA;    std::vector&amp;lt;std::vector&amp;lt;float&amp;gt;&amp;gt; deriv_activations;&#xA;};&#xA;&#xA;Network create_network(std::vector&amp;lt;int&amp;gt; layers)&#xA;{&#xA;    Network network;&#xA;    network.weights.reserve(layers.size() - 1);&#xA;    int nodes_in_prev_layer = layers[0];&#xA;    for (unsigned int i = 0; i &amp;lt; layers.size() - 1; &#x2B;&#x2B;i)&#xA;    {&#xA;        int nodes_in_layer = layers[i &#x2B; 1];&#xA;        network.weights.push_back(std::vector&amp;lt;std::vector&amp;lt;float&amp;gt;&amp;gt;());&#xA;        network.weights[i].reserve(nodes_in_layer);&#xA;        for (int j = 0; j &amp;lt; nodes_in_layer; &#x2B;&#x2B;j)&#xA;        {&#xA;            network.weights[i].push_back(std::vector&amp;lt;float&amp;gt;());&#xA;            network.weights[i][j].reserve(nodes_in_prev_layer);&#xA;            for (int k = 0; k &amp;lt; nodes_in_prev_layer; &#x2B;&#x2B;k)&#xA;            {&#xA;                float input_weight = float(std::rand()) / RAND_MAX;&#xA;                network.weights[i][j].push_back(input_weight);&#xA;            }&#xA;        }&#xA;        nodes_in_prev_layer = nodes_in_layer;&#xA;    }&#xA;    return network;&#xA;}&#xA;&#xA;int main() &#xA;{&#xA;    Timer timer;&#xA;    Network network = create_network({784, 800, 16, 10});&#xA;    std::cout &amp;lt;&amp;lt; timer.get_duration() &amp;lt;&amp;lt; std::endl;&#xA;    std::cout &amp;lt;&amp;lt; sizeof(network) &amp;lt;&amp;lt; std::endl;&#xA;    std::cin.get();&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206990</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">How to initialize non-const member variables with const actual parameter?</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="initialization" />
+        <author>
+            <name>trawolf</name>
+            <uri>https://stackoverflow.com/users/13129245</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206990/how-to-initialize-non-const-member-variables-with-const-actual-parameter" />
+        <published>2020-04-14T11:49:47Z</published>
+        <updated>2020-04-14T12:02:54Z</updated>
+        <summary type="html">
+            &lt;p&gt;When I initialize the constructor with the given data type of the parameter, I find that it goes wrong with the explaination that &quot; const char* values cannot be assigned to char* entities&quot;.&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;class TString&#xA;{&#xA;private:&#xA;    char* m_pData;&#xA;    int  m_nLength;&#xA;public:&#xA;    TString();&#xA;    TString(const  char* pStr);&#xA;    &#xB7;&#xB7;&#xB7;&#xB7;&#xB7;&#xB7;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;TString::TString(const  char* pStr) {&#xA;    this-&amp;gt;m_pData = pStr;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;What should I do to solve this problem? If possible, give me a right example.&#xA;Thanks in advance and apolpgize for my ignorance.&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206910</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">C&#x2B;&#x2B; Inheritence vs Using parent class as a field in children classes</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="class" />
+            <category scheme="https://stackoverflow.com/tags" term="inheritance" />
+        <author>
+            <name>Dani Nagy</name>
+            <uri>https://stackoverflow.com/users/12664906</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206910/c-inheritence-vs-using-parent-class-as-a-field-in-children-classes" />
+        <published>2020-04-14T11:44:39Z</published>
+        <updated>2020-04-14T11:44:39Z</updated>
+        <summary type="html">
+            &lt;p&gt;I was wondering why to use inheritence, when you can easily come up with an alternative, which for me is more evident to use:&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Let&#x27;s say we have classes Parent, Child_1, and Child_2:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;class Parent {&#xA;public:&#xA;    int x;&#xA;}&#xA;&#xA;class Child_1 {&#xA;public:&#xA;    Parent p;&#xA;    string s;&#xA;}&#xA;&#xA;class Child_2 {&#xA;public:&#xA;    Parent p;&#xA;    char c;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;How is this different, than:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;class Parent {&#xA;public:&#xA;    int x;&#xA;}&#xA;&#xA;class Child_1 : public Parent {&#xA;public:&#xA;    string s;&#xA;}&#xA;&#xA;class Child_2 : public Parent {&#xA;public:&#xA;    char c;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;I understand that using inheritance allows us to use private, protected and public fields separately, but for me it complicates things more than being useful. To be honest, when I used private, it was more of a drawback, that I had to write getter and setter functions for private fields. Now I usually just put everything to public, for the sake of simplicity. Opinions?&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206788</id>
+        <re:rank scheme="https://stackoverflow.com">-5</re:rank>
+        <title type="text">Algorithm and Data structure [closed]</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+        <author>
+            <name>Shahzad Ul Haq</name>
+            <uri>https://stackoverflow.com/users/13310749</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206788/algorithm-and-data-structure" />
+        <published>2020-04-14T11:37:42Z</published>
+        <updated>2020-04-14T11:37:42Z</updated>
+        <summary type="html">
+            &lt;p&gt;what is the overhead of a single linked list and doubly linked list over arrays?&#xA;Why pushsing and popping elements at the start of a stack using array is not constant-time operation?&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206703</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Is there &quot;includePath&quot; option in clangd?</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="c" />
+            <category scheme="https://stackoverflow.com/tags" term="neovim" />
+            <category scheme="https://stackoverflow.com/tags" term="clangd" />
+        <author>
+            <name>AMIR REZA SADEQI</name>
+            <uri>https://stackoverflow.com/users/10243689</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206703/is-there-includepath-option-in-clangd" />
+        <published>2020-04-14T11:32:32Z</published>
+        <updated>2020-04-14T11:44:45Z</updated>
+        <summary type="html">
+            &lt;p&gt;I used to work with VSCode &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools&quot; rel=&quot;nofollow noreferrer&quot;&gt;C/C&#x2B;&#x2B;&lt;/a&gt; extension. there was a feature in this extension(in a json file), called &quot;includePath&quot;, which I could set the paths for my headers, so without execution of CMake or make, I would have the suggestion of my headers and code completion from those.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;now I have switched to neovim and clangd as the language server for code completion. I searched a lot to find the corresponding feature in clangd options but I could not find anything more than &lt;a href=&quot;https://manpages.debian.org/experimental/clangd/clangd.1.en.html&quot; rel=&quot;nofollow noreferrer&quot;&gt;this link&lt;/a&gt;.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;since the clangd is a powerful language server, I am in wonder if there is not such a feature in it. so I want to know is there actually such a feature in clangd? and if YES how can I use that?&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Note: I use a language client, called &lt;a href=&quot;https://github.com/clangd/coc-clangd&quot; rel=&quot;nofollow noreferrer&quot;&gt;&quot;coc-clangd&quot;&lt;/a&gt;. I don&#x27;t know if it matters or not.&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206680</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Linker ( MinGW ) doesn&#x27;t recognaize global scope functions</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="compiler-errors" />
+            <category scheme="https://stackoverflow.com/tags" term="g&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="linker-errors" />
+            <category scheme="https://stackoverflow.com/tags" term="mingw-w64" />
+        <author>
+            <name>Dudu Ponar</name>
+            <uri>https://stackoverflow.com/users/7967856</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206680/linker-mingw-doesnt-recognaize-global-scope-functions" />
+        <published>2020-04-14T11:31:09Z</published>
+        <updated>2020-04-14T11:31:09Z</updated>
+        <summary type="html">
+            &lt;p&gt;So my project contains two separate source files and headers:&#xA;&lt;code&gt;matrix.cpp, matrix.h, svd.cpp, svd.h&lt;/code&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;both &lt;code&gt;matrix.cpp&lt;/code&gt; and &lt;code&gt;svd.h&lt;/code&gt; includes &lt;code&gt;matrix.h&lt;/code&gt; . and each header file has some implementation in addition to definitions. In the case of including the &lt;code&gt;matrix.cpp&lt;/code&gt; in &lt;code&gt;svd.cpp&lt;/code&gt; (instend of &lt;code&gt;matrix.h&lt;/code&gt;) the code compiled (and rus) just fine. compiled through &lt;code&gt;g&#x2B;&#x2B; -o svdlib svd.cpp&lt;/code&gt;.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;BUT&lt;/strong&gt;, In the standard case compiling through :&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;    g&#x2B;&#x2B; -c ./matrix.cpp -o ./matrix.o&#xA;    g&#x2B;&#x2B; -c ./svd.cpp -o ./svd.o&#xA;    g&#x2B;&#x2B; -o svdlib  ./svd.o ./matrix.o&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;returns &lt;strong&gt;undefined reference&lt;/strong&gt;. notes that the matrix.cpp doesn&#x27;t depend at the svd files ( nor the header ). I suspect that the problem is that the &lt;strong&gt;linker&lt;/strong&gt; marks &lt;em&gt;global scope functions&lt;/em&gt; under a &#xA;arbitrary namespace. but I amn`t sure about that. so brilliant minds, please, what should I do? &lt;/p&gt;&#xA;&#xA;&lt;p&gt;here is the output of the compilation :&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;davidponar@DESKTOP-M43N0AS MSYS ~/workspace/svdlib (master)&#xA;$ g&#x2B;&#x2B; -o svdlib ./svd.o  ./matrix.o&#xA;./svd.o:svd.cpp:(.text&#x2B;0x47e): undefined reference to `std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp; normailize&amp;lt;double&amp;gt;(std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x550): undefined reference to `std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp; normailize&amp;lt;double&amp;gt;(std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x5a1): undefined reference to `std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp; operator*&amp;lt;double&amp;gt;(Matrix&amp;lt;double&amp;gt;&amp;amp;, std::vector&amp;lt;double,&#xA;std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x5ce): undefined reference to `std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp; operator*&amp;lt;double&amp;gt;(Matrix&amp;lt;double&amp;gt;&amp;amp;, std::vector&amp;lt;double,&#xA;std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x5d6): undefined reference to `std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp; normailize&amp;lt;double&amp;gt;(std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x655): undefined reference to `std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp; normailize&amp;lt;double&amp;gt;(std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x7b2): undefined reference to `std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp; operator*&amp;lt;double&amp;gt;(Matrix&amp;lt;double&amp;gt;&amp;amp;, std::vector&amp;lt;double,&#xA;std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x7d9): undefined reference to `std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp; operator*&amp;lt;double&amp;gt;(Matrix&amp;lt;double&amp;gt;&amp;amp;, std::vector&amp;lt;double,&#xA;std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x9e2): undefined reference to `std::ostream&amp;amp; operator&amp;lt;&amp;lt; &amp;lt;double&amp;gt;(std::ostream&amp;amp;, Matrix&amp;lt;double&amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0xa0a): undefined reference to `std::ostream&amp;amp; operator&amp;lt;&amp;lt; &amp;lt;double&amp;gt;(std::ostream&amp;amp;, Matrix&amp;lt;double&amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0xe74): undefined reference to `std::vector&amp;lt;double, std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp; operator*&amp;lt;double&amp;gt;(Matrix&amp;lt;double&amp;gt;&amp;amp;, std::vector&amp;lt;double,&#xA;std::allocator&amp;lt;double&amp;gt; &amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x1094): undefined reference to `std::ostream&amp;amp; operator&amp;lt;&amp;lt; &amp;lt;double&amp;gt;(std::ostream&amp;amp;, Matrix&amp;lt;double&amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x10b3): undefined reference to `std::ostream&amp;amp; operator&amp;lt;&amp;lt; &amp;lt;double&amp;gt;(std::ostream&amp;amp;, Matrix&amp;lt;double&amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x10d2): undefined reference to `std::ostream&amp;amp; operator&amp;lt;&amp;lt; &amp;lt;double&amp;gt;(std::ostream&amp;amp;, Matrix&amp;lt;double&amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x11ae): undefined reference to `std::ostream&amp;amp; operator&amp;lt;&amp;lt; &amp;lt;double&amp;gt;(std::ostream&amp;amp;, Matrix&amp;lt;double&amp;gt;&amp;amp;)&#x27;&#xA;./svd.o:svd.cpp:(.text&#x2B;0x11d6): undefined reference to `std::ostream&amp;amp; operator&amp;lt;&amp;lt; &amp;lt;double&amp;gt;(std::ostream&amp;amp;, Matrix&amp;lt;double&amp;gt;&amp;amp;)&#x27;&#xA;collect2.exe: error: ld returned 1 exit status&#xA;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206625</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">How to save data, user specified</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="save" />
+        <author>
+            <name>Paul Brammer</name>
+            <uri>https://stackoverflow.com/users/13310677</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206625/how-to-save-data-user-specified" />
+        <published>2020-04-14T11:27:36Z</published>
+        <updated>2020-04-14T11:33:18Z</updated>
+        <summary type="html">
+            &lt;p&gt;this is a programme that needs to save the outputs to a user specified data file however it doesn&#x27;t seem to save and Im not sure why, Im relatively new to C&#x2B;&#x2B; so any help is appreciated&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;cout &amp;lt;&amp;lt; &quot;Press &#x27;s&#x27; then &#x27;Enter&#x27; to save the file or any other key then &#x27;Enter&#x27; to display&quot;;&#xA;cin &amp;gt;&amp;gt; save;&#xA;&#xA;if (save != &#x27;s&#x27;)&#xA;{&#xA;    cout &amp;lt;&amp;lt; &quot;Ix = &quot; &amp;lt;&amp;lt; Ix &amp;lt;&amp;lt; &quot;A\n&quot;;&#xA;    cout &amp;lt;&amp;lt; &quot;Iy = &quot; &amp;lt;&amp;lt; Iy &amp;lt;&amp;lt; &quot;A\n&quot;;&#xA;    cout &amp;lt;&amp;lt; &quot;Vz = &quot; &amp;lt;&amp;lt; Vz &amp;lt;&amp;lt; &quot;V\n&quot;;&#xA;}&#xA;else&#xA;{&#xA;    cout &amp;lt;&amp;lt; &quot;Please enter a name for your file: \n&quot;;&#xA;    cin &amp;gt;&amp;gt; filename;&#xA;&#xA;    cout &amp;lt;&amp;lt; &quot; Please enter a directory to save your file in: \n&quot;;&#xA;    cin &amp;gt;&amp;gt; filepath;&#xA;&#xA;    ofstream file((filepath &#x2B; &quot;/&quot; &#x2B; filename).c_str());&#xA;&#xA;//input is being writen to the file&#xA;    file &amp;lt;&amp;lt; &quot;Ix = &quot; &amp;lt;&amp;lt; Ix &amp;lt;&amp;lt; &quot;A\n&quot;;&#xA;    file &amp;lt;&amp;lt; &quot;Iy = &quot; &amp;lt;&amp;lt; Iy &amp;lt;&amp;lt; &quot;A\n&quot;;&#xA;    file &amp;lt;&amp;lt; &quot;Vz = &quot; &amp;lt;&amp;lt; Vz &amp;lt;&amp;lt; &quot;V\n&quot;;&#xA;&#xA;    file &amp;lt;&amp;lt; flush;&#xA;    file.close();&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;}&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206449</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">How to compile with clang and mingw-w64?</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="exception" />
+            <category scheme="https://stackoverflow.com/tags" term="clang" />
+            <category scheme="https://stackoverflow.com/tags" term="mingw-w64" />
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;20" />
+        <author>
+            <name>egst</name>
+            <uri>https://stackoverflow.com/users/1953032</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206449/how-to-compile-with-clang-and-mingw-w64" />
+        <published>2020-04-14T11:17:56Z</published>
+        <updated>2020-04-14T11:33:10Z</updated>
+        <summary type="html">
+            &lt;p&gt;I&#x27;m trying to use clang10 with mingw-w64&#x27;s libstdc&#x2B;&#x2B;, since the MSVC headers don&#x27;t support clang 10. I don&#x27;t mind not having the new parts of the standard library, I just want to use the new language features.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I have mingw-w64 version 8.1.0 for x86_64 with POSIX threads and SEH exceptions installed and I run clang with a command:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;clang&#x2B;&#x2B; -target x86_64-pc-windows-gnu -std=c&#x2B;&#x2B;20 ...&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Everything works OK. All the language features that should be implemented in clang 10 work, but when I throw any exception, this happens when I run the program (the program compiles OK):&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;Mingw-w64 runtime failure:&#xA;  Unknown pseudo relocation protocol version 65536.&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;I tried installing mingw with SJLJ exceptions and use the &lt;code&gt;-fsjlj-exceptions&lt;/code&gt; flag in clang, but the program doesn&#x27;t even compile:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;C:\Users\egst\AppData\Local\Temp\test-f4a4de.o:test.cpp:(.text&#x2B;0x82): undefined reference to `__gxx_personality_sj0&#x27;&#xA;C:\Users\egst\AppData\Local\Temp\test-f4a4de.o:test.cpp:(.text&#x2B;0xd9): undefined reference to `_Unwind_SjLj_Register&#x27;&#xA;C:\Users\egst\AppData\Local\Temp\test-f4a4de.o:test.cpp:(.text&#x2B;0x177): undefined reference to `_Unwind_SjLj_Resume&#x27;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;&lt;code&gt;clang&#x2B;&#x2B; --version&lt;/code&gt; shows &lt;code&gt;Target: x86_64-pc-windows-msvc&lt;/code&gt;. Maybe there&#x27;s a version for &lt;code&gt;x86_64-pc-windows-gnu&lt;/code&gt; that I should use instead? Is there any way to make this work at this moment, or should I wait for support from MSVC? Is there maybe any alternative besides MSVC and MinGW?&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206356</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Private data in C&#x2B;&#x2B; [duplicate]</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="private" />
+        <author>
+            <name>Darius Baws</name>
+            <uri>https://stackoverflow.com/users/10733188</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206356/private-data-in-c" />
+        <published>2020-04-14T11:12:24Z</published>
+        <updated>2020-04-14T11:17:32Z</updated>
+        <summary type="html">
+            &lt;p&gt;I made a program for a doubly circular linked list and in my first attempt, I created a struct for storing the values I need (info, and the pointers to the next/previous element). By doing that, it was simple to access the variables using instructions like &#xA0;&#xA0;&#xA0;&#xA0;&lt;em&gt;cin &gt;&gt; p-&gt;info&lt;/em&gt;  or &lt;em&gt;p-&gt;info = x&lt;/em&gt; or &lt;em&gt;p-&gt;next = NULL, p-&gt;prev = NULL&lt;/em&gt;, &lt;em&gt;p = p-&gt;next&lt;/em&gt; &#xA0;&#xA0;&#xA0;and so on. &lt;br/&gt;&#xA;Then I read the homework more carefully and it said that the data should be private, so I replaced the &quot;struct&quot; with &quot;class&quot;, declared those variables &quot;private&quot;, then in order to access them, I found out that I should create some getters and setters. In the instructions down below you see that I created the getters, but how should I create the setters and how should I access the variables?&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;class node&#xA;{&#xA;private:&#xA;&#xA;    int info;&#xA;    node *next,*prev;&#xA;public:&#xA;    int infoo() const&#xA;    {&#xA;        return info;&#xA;    }&#xA;    void setNode( int information )&#xA;    {&#xA;        info=information;&#xA;    }&#xA;    node *nextnode() const&#xA;    {&#xA;        return next;&#xA;    }&#xA;    node *prevnode() const&#xA;    {&#xA;        return prev;&#xA;    }&#xA;}*p,*first,*last,*firstt;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206223</id>
+        <re:rank scheme="https://stackoverflow.com">-2</re:rank>
+        <title type="text">error while assigning variable to the elements of vector of vector in c&#x2B;&#x2B;</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="stl" />
+        <author>
+            <name>Fsubhani</name>
+            <uri>https://stackoverflow.com/users/9677824</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206223/error-while-assigning-variable-to-the-elements-of-vector-of-vector-in-c" />
+        <published>2020-04-14T11:04:59Z</published>
+        <updated>2020-04-14T11:12:17Z</updated>
+        <summary type="html">
+            &lt;pre&gt;&lt;code&gt;void fun(vector&amp;lt;vector&amp;lt;int &amp;gt;&amp;gt; &amp;amp;vec){&#xA;      int l=0, r=0;&#xA;        int n = vec.size();&#xA;         for(int i=0;i&amp;lt;n;i&#x2B;&#x2B;){&#xA;          for(int j=0;j&amp;lt;vec[i].size()-1;j&#x2B;&#x2B;){&#xA;             if(vec[i][j]==0)&#xA;                    l&#x2B;= vec[i][j&#x2B;1];&#xA;             if(vec[i][j] == 1)&#xA;                    r&#x2B;= vec[i][j&#x2B;1]; &#xA;           } &#xA;         }&#xA;  }&#xA; I have only two column in the matrix eg. [[0,3],[1,9],[0,7]]&#xA; so i can do like that &#xA;&#xA; for(int i=0;i&amp;lt;n;i&#x2B;&#x2B;){&#xA;                 if(vec[i][0]==0)&#xA;                       l&#x2B;= vec[i][1];&#xA;                 if(vec[i][0] == 1)&#xA;                         r&#x2B;= vec[i][1]; &#xA;             }&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;but above lines ( l&#x2B;= vec[i][1] and r&#x2B;= vec[i][1] gives me error)  however I&#x27;m &#xA;able to print &lt;code&gt;cout&amp;lt;&amp;lt;vec[i][1]&lt;/code&gt; but can&#x27;t store sum of elements :&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;AddressSanitizer:DEADLYSIGNAL&#xA;=================================================================&#xA;==32==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x000000385fd7 bp 0x7ffe843426f0 sp 0x7ffe84342640 T0)&#xA;==32==The signal is caused by a READ memory access.&#xA;==32==Hint: address points to the zero page.&#xA;    #7 0x7fd0ef11f82f  (/lib/x86_64-linux-gnu/libc.so.6&#x2B;0x2082f)&#xA;AddressSanitizer can not provide additional info.&#xA;==32==ABORTING&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Need Help!&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206183</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">css and other in gnu microhttpd</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="css" />
+            <category scheme="https://stackoverflow.com/tags" term="gnu" />
+        <author>
+            <name>sviardot</name>
+            <uri>https://stackoverflow.com/users/13103624</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206183/css-and-other-in-gnu-microhttpd" />
+        <published>2020-04-14T11:02:07Z</published>
+        <updated>2020-04-14T11:47:11Z</updated>
+        <summary type="html">
+            &lt;p&gt;i work on a soft using the gnu microhttpd library and it&#x27;s working fine.&#xA;Anyway to made my html output human-friendly, i want to use css and so one.&#xA;sound like a made an error but i don&#x27;t see :&lt;/p&gt;&#xA;&#xA;&lt;p&gt;so, if someone could help.&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt; string sPage;&#xA;    sPage = &quot;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;link rel = \&quot;stylesheet\&quot; type = \&quot;text/css\&quot; href = \&quot;./template.css\&quot; /&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body style=\&quot;background-color:red&amp;gt;&amp;lt;a href=\&quot;../test1.htm\&quot;&amp;gt;Link to this folder&amp;lt;/a&amp;gt;&amp;lt;div class=\&quot;flex-container\&quot;&amp;gt;&amp;lt;div&amp;gt;Le processus &quot; &#x2B; Process&#xA;    &#x2B; &quot; n\&#x27;est pas actif, impossible de se connecter&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;IMG src=\&quot;../images/TrafficLights.png\&quot;&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&quot;;&#xA;&#xA;    struct MHD_Response *response;&#xA;    int ret;&#xA;&#xA;    //response = MHD_create_response_from_buffer (strlen (page),(void*) page, MHD_RESPMEM_PERSISTENT);&#xA;    response = MHD_create_response_from_buffer (strlen (sPage.c_str()),(void*) sPage.c_str(), MHD_RESPMEM_PERSISTENT);&#xA;    ret = MHD_queue_response (connection, MHD_HTTP_OK, response);&#xA;    MHD_destroy_response (response);&#xA;&#xA;    return ret;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206170</id>
+        <re:rank scheme="https://stackoverflow.com">-2</re:rank>
+        <title type="text">making every element in an array equal through math [closed]</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="algorithm" />
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;11" />
+            <category scheme="https://stackoverflow.com/tags" term="math" />
+        <author>
+            <name>Puma Wolf Dem</name>
+            <uri>https://stackoverflow.com/users/13310507</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206170/making-every-element-in-an-array-equal-through-math" />
+        <published>2020-04-14T11:01:41Z</published>
+        <updated>2020-04-14T11:01:41Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have no idea where to start in this problem&#xA;The question is:&#xA;N number of elements are given. And you must make them all equal by adding 5,2 or 1 while excluding one of the numbers . You must give minimum number of additions.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;example input would be:&lt;/p&gt;&#xA;&#xA;&lt;p&gt;2 2 3 2 7&lt;/p&gt;&#xA;&#xA;&lt;p&gt;and the output being 2&lt;/p&gt;&#xA;&#xA;&lt;p&gt;explanation would be that&lt;/p&gt;&#xA;&#xA;&lt;p&gt;2 2 3 2 7&lt;/p&gt;&#xA;&#xA;&lt;p&gt;you choose 3 and add by 1 making it&lt;/p&gt;&#xA;&#xA;&lt;p&gt;3 3 3 3 8&lt;/p&gt;&#xA;&#xA;&lt;p&gt;then choose 8 and add by 5:&lt;/p&gt;&#xA;&#xA;&lt;p&gt;8 8 8 8 8&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I have no idea how to calculate the possible moves or how to make them equal on pen and paper through sheer brute force as it takes too much time. Could any of you please help how I should be solving this problem cause I don&#x27;t know where to start. Especially in the math department. If you all could help me figure out the theorem or just the general algorithm I should be using I think I should be able to figure out the ode itself&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61206009</id>
+        <re:rank scheme="https://stackoverflow.com">1</re:rank>
+        <title type="text">calling function that returns rvalue reference</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;11" />
+        <author>
+            <name>Mr. 787</name>
+            <uri>https://stackoverflow.com/users/13310266</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61206009/calling-function-that-returns-rvalue-reference" />
+        <published>2020-04-14T10:53:28Z</published>
+        <updated>2020-04-14T11:06:07Z</updated>
+        <summary type="html">
+            &lt;p&gt;I think I understand most of the rvalue stuff, but when I tried to implement the following code, I got segmentation fault(core dumped) :( maybe I&#x27;m still missing some details and would appreciate any help!&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I have this &lt;code&gt;struct Mode&lt;/code&gt; in my header:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;#include &amp;lt;memory&amp;gt;&#xA;#include &amp;lt;iostream&amp;gt;&#xA;&#xA;struct Mode&#xA;{&#xA;    explicit Mode(const int id_in, const int p_val=1) : id{id_in}, p{new int{p_val}} {&#xA;        std::cout &amp;lt;&amp;lt; &quot;explicit param default ctr called...&quot; &amp;lt;&amp;lt; std::endl;&#xA;&#xA;    }&#xA;    Mode() : id{42}, p{nullptr}{&#xA;        std::cout &amp;lt;&amp;lt; &quot;default ctr called...&quot; &amp;lt;&amp;lt; std::endl;&#xA;    }&#xA;&#xA;    Mode&amp;amp;&amp;amp; clone() {&#xA;        Mode m(*this);&#xA;        m.p.reset(new int{*m.p});&#xA;        return std::move(m);&#xA;    }   &#xA;    int id;&#xA;    std::shared_ptr&amp;lt;int&amp;gt; p;&#xA;};&#xA;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;and in main.cpp I do this:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;int main()&#xA;{&#xA;    Mode m{42, 43};&#xA;    Mode m2;&#xA;    m2 = m.clone();&#xA;&#xA;    cout &amp;lt;&amp;lt; m.p &amp;lt;&amp;lt; endl;&#xA;    cout &amp;lt;&amp;lt; m2.p;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;what happens in detail in the line &lt;code&gt;m2 = m.clone()&lt;/code&gt;? What I understand so far is: in &lt;code&gt;clone()&lt;/code&gt; it creates a temporary copy of &lt;code&gt;m&lt;/code&gt; using the copy constructor &lt;code&gt;Mode m(*this)&lt;/code&gt;, and std::move the contents of this temp object, and finally returns to its caller &lt;code&gt;m2&lt;/code&gt;. And in main.cpp I assign the rvalue to &lt;code&gt;m2&lt;/code&gt; using move assignment? I&#x27;m not so sure till this step... &lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205969</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">ONVIF device discovery implementation using GSoap (both server and client)</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="windows-10" />
+            <category scheme="https://stackoverflow.com/tags" term="onvif" />
+        <author>
+            <name>NSED</name>
+            <uri>https://stackoverflow.com/users/10583894</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205969/onvif-device-discovery-implementation-using-gsoap-both-server-and-client" />
+        <published>2020-04-14T10:51:32Z</published>
+        <updated>2020-04-14T10:51:32Z</updated>
+        <summary type="html">
+            &lt;p&gt;I am currently working on  device discovery(for both server and client).I am new to gsoap and onvif protocol. The camera the one  I am using is a custom camera and it is not onvif compatible. So now I have to implement onvif protocol  on both server and client side. Could anyone tell me where to start? While reading about gsoap, I have come across type,  scope and endpoint in soap_wsdd_Hello and  soap_wsdd_Probe.&lt;br&gt;&#xA;Could anyone please explain me about type, scope and endpoint in simple terms. Do they have  to be same in server and client?&#xA;Thanks.&#xA;Regards&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205910</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">When n = 5 , Why is &quot; Done! &quot; part printed 5 times even though it is after the recursive call statement?</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="recursion" />
+        <author>
+            <name>Ar M</name>
+            <uri>https://stackoverflow.com/users/13081730</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205910/when-n-5-why-is-done-part-printed-5-times-even-though-it-is-after-the-r" />
+        <published>2020-04-14T10:47:43Z</published>
+        <updated>2020-04-14T10:59:40Z</updated>
+        <summary type="html">
+            &lt;p&gt;I understand why &quot;I am Calculating&quot; part is printed 5 times since its above the call statement. Shouldn&#x27;t the &quot;Done!&quot; part only be printed once after the five lines of &quot;I am calculating&quot; being printed and then f be returned? &lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;int factorial( int n)&#xA;{&#xA;    cout&amp;lt;&amp;lt;&quot;I am calculating F(&quot;&amp;lt;&amp;lt;n&amp;lt;&amp;lt;&quot;)\n &quot;;&#xA;    if(n == 0)&#xA;        return 1 ;&#xA;    int f = n * factorial(n - 1);&#xA;    cout&amp;lt;&amp;lt;&quot;Done! F(&quot;&amp;lt;&amp;lt;n&amp;lt;&amp;lt;&quot;) = &quot; &amp;lt;&amp;lt;f&amp;lt;&amp;lt;&#x27;\n&#x27;;&#xA;    return f;  &#xA;}&#xA;&#xA;int main()&#xA;{&#xA;  int n;&#xA;  cin&amp;gt;&amp;gt;n;&#xA;  int result = factorial(n);&#xA;  cout &amp;lt;&amp;lt; result;  &#xA;}&#xA;&#xA;CODE OUTPUT:&#xA;5&#xA;I am calculating F(5)&#xA; I am calculating F(4)&#xA; I am calculating F(3)&#xA; I am calculating F(2)&#xA; I am calculating F(1)&#xA; I am calculating F(0)&#xA; Done! F(1) = 1&#xA;Done! F(2) = 2&#xA;Done! F(3) = 6&#xA;Done! F(4) = 24&#xA;Done! F(5) = 120&#xA;120&#xA;&#xA;&#xA;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205875</id>
+        <re:rank scheme="https://stackoverflow.com">2</re:rank>
+        <title type="text">What is special about operator-&gt; and how does it work?</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="pointers" />
+            <category scheme="https://stackoverflow.com/tags" term="operator-overloading" />
+            <category scheme="https://stackoverflow.com/tags" term="operators" />
+        <author>
+            <name>StackExchange123</name>
+            <uri>https://stackoverflow.com/users/9140652</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205875/what-is-special-about-operator-and-how-does-it-work" />
+        <published>2020-04-14T10:45:38Z</published>
+        <updated>2020-04-14T12:04:44Z</updated>
+        <summary type="html">
+            &lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;&#xA;&#xA;class A&#xA;{&#xA;public:&#xA;&#xA;    int a;&#xA;    int b;&#xA;    int c;&#xA;    int d;&#xA;};&#xA;&#xA;class B&#xA;{&#xA;    A a;&#xA;&#xA;public:&#xA;&#xA;    B(int a, int b, int c, int d) : a{ a, b, c, d } {}&#xA;&#xA;    A* operator-&amp;gt;()&#xA;    {&#xA;        return &amp;amp;a;&#xA;    }&#xA;&#xA;    A* operator&#x2B;&#x2B;(int)&#xA;    {&#xA;        return &amp;amp;a;&#xA;    }&#xA;&#xA;    A* pointer()&#xA;    {&#xA;        return &amp;amp;a;&#xA;    }&#xA;};&#xA;&#xA;int main()&#xA;{&#xA;    B b(1, 2, 3, 4);&#xA;&#xA;    //std::cout &amp;lt;&amp;lt; b-&amp;gt;-&amp;gt;a &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b-&amp;gt;-&amp;gt;b &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b-&amp;gt;-&amp;gt;c &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b-&amp;gt;-&amp;gt;d &amp;lt;&amp;lt; std::endl;&#xA;&#xA;    std::cout &amp;lt;&amp;lt; b-&amp;gt;a &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b-&amp;gt;b &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b-&amp;gt;c &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b-&amp;gt;d &amp;lt;&amp;lt; std::endl;&#xA;&#xA;//  std::cout &amp;lt;&amp;lt; b.pointer()a &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b.pointer()b &amp;lt;&amp;lt; &#x27; &#x27; &#xA;//              &amp;lt;&amp;lt; b.pointer()c &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b.pointer()d &amp;lt;&amp;lt; std::endl; &#xA;&#xA;    std::cout &amp;lt;&amp;lt; b.pointer()-&amp;gt;a &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b.pointer()-&amp;gt;b &amp;lt;&amp;lt; &#x27; &#x27; &#xA;                &amp;lt;&amp;lt; b.pointer()-&amp;gt;c &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b.pointer()-&amp;gt;d &amp;lt;&amp;lt; std::endl; &#xA;&#xA;    //std::cout &amp;lt;&amp;lt; b&#x2B;&#x2B;a &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b&#x2B;&#x2B;b &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b&#x2B;&#x2B;c &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b&#x2B;&#x2B;d &amp;lt;&amp;lt; std::endl;&#xA;&#xA;    std::cout &amp;lt;&amp;lt; b&#x2B;&#x2B;-&amp;gt;a &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b&#x2B;&#x2B;-&amp;gt;b &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b&#x2B;&#x2B;-&amp;gt;c &amp;lt;&amp;lt; &#x27; &#x27; &amp;lt;&amp;lt; b&#x2B;&#x2B;-&amp;gt;d &amp;lt;&amp;lt; std::endl;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Here in this code the &lt;code&gt;operator-&amp;gt;&lt;/code&gt; and the function &lt;code&gt;pointer&lt;/code&gt; returns exactly the same thing. But when when I call the &lt;code&gt;operator-&amp;gt;&lt;/code&gt; I can treat &lt;code&gt;b&lt;/code&gt; as if it was the actual pointer. Whereas if I call the function &lt;code&gt;pointer&lt;/code&gt; I have to use the arrow operator to access the members of &lt;code&gt;a&lt;/code&gt;. That applies to &lt;code&gt;operator&#x2B;&#x2B;&lt;/code&gt; also. Is this a unique behavior only for &lt;code&gt;operator-&amp;gt;&lt;/code&gt;? How does &lt;code&gt;operator-&amp;gt;&lt;/code&gt; work?&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205865</id>
+        <re:rank scheme="https://stackoverflow.com">1</re:rank>
+        <title type="text">Specifying base class method template type (c&#x2B;&#x2B;)</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="inheritance" />
+            <category scheme="https://stackoverflow.com/tags" term="using" />
+            <category scheme="https://stackoverflow.com/tags" term="template-specialization" />
+            <category scheme="https://stackoverflow.com/tags" term="base-class" />
+        <author>
+            <name>Smartskaft2</name>
+            <uri>https://stackoverflow.com/users/8219349</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205865/specifying-base-class-method-template-type-c" />
+        <published>2020-04-14T10:45:11Z</published>
+        <updated>2020-04-14T10:45:11Z</updated>
+        <summary type="html">
+            &lt;p&gt;I am trying to create a class using tag dispatching for different method implementations, for different use cases.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;The class has template methods, using the tags with template specialization for different behaviors with the same method signature.&lt;/p&gt;&#xA;&#xA;&lt;hr&gt;&#xA;&#xA;&lt;h2&gt;User scenarios:&lt;/h2&gt;&#xA;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;I want one user to be able to set the tag when declaring the object and no longer care about the tag, when later using its methods. &lt;/li&gt;&#xA;&lt;li&gt;I also want another user to use the tags more dynamically, e.g. use different tags in different parts of the code (with the same object).&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;hr&gt;&#xA;&#xA;&lt;p&gt;Maybe it is wishful thinking that one class could do both these, without if-statements or other overhead? So I tried using two similarly named classes, which could be used for these two scenarios.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I am now trying to get a template subclass (used for scenario 1) to inherit from the base class (used for scenario 2) with all the members and methods, but also set the method template types (tags). A minimal example of what I am trying to describe is shown below (without tag dispatching).&lt;/p&gt;&#xA;&#xA;&lt;hr&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;Is there a way to set the template type of a base class method template, without writing a wrapper method?&lt;/strong&gt; &#xA;E.g. using &lt;code&gt;using&lt;/code&gt; (did get that to work though, see below).&lt;/p&gt;&#xA;&#xA;&lt;hr&gt;&#xA;&#xA;&lt;p&gt;The perfect solution would also use the same type name for both the template (subclass) and non-template (base) class, but I guess that is not allowed in the same namespace? This question is secondary to the above.&lt;/p&gt;&#xA;&#xA;&lt;hr&gt;&#xA;&#xA;&lt;h2&gt;Class definitions&lt;/h2&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;// Base class declaration&#xA;class tA;&#xA;&#xA;// Template specialization implementation&#xA;namespace detail&#xA;{&#xA;    template&amp;lt;typename T&amp;gt;&#xA;    void doSomethingImpl(const tA&amp;amp; a)&#xA;    {&#xA;        std::cout &amp;lt;&amp;lt; &quot;Does something default.&quot; &amp;lt;&amp;lt; std::endl;&#xA;    }&#xA;&#xA;    template&amp;lt;&amp;gt;&#xA;    void doSomethingImpl&amp;lt;int&amp;gt;(const tA&amp;amp; a)&#xA;    {&#xA;        std::cout &amp;lt;&amp;lt; &quot;Does something int&#x27;y&quot; &amp;lt;&amp;lt; std::endl;&#xA;    }&#xA;&#xA;    template&amp;lt;&amp;gt;&#xA;    void doSomethingImpl&amp;lt;float&amp;gt;(const tA&amp;amp; a)&#xA;    {&#xA;        std::cout &amp;lt;&amp;lt; &quot;Does something float&#x27;y&quot; &amp;lt;&amp;lt; std::endl;&#xA;    }&#xA;}&#xA;&#xA;// Base class definition&#xA;class tA&#xA;{&#xA;  public:    &#xA;    template&amp;lt;typename T&amp;gt;&#xA;    void doSomething() &#xA;    {&#xA;        detail::doSomethingImpl&amp;lt;T&amp;gt;(*this);&#xA;    }&#xA;};&#xA;&#xA;&#xA;// Subclass, should set doSomething type in object declaration&#xA;template&amp;lt;typename T&amp;gt;&#xA;class tB : public tA&#xA;{&#xA;  public:&#xA;    // using tA::doSomething&amp;lt;T&amp;gt;; // error: a template-id may not appear in a using-declaration&#xA;                                 // What do do? I&#x27;d rather not use a wrapped method below.&#xA;&#xA;    // Unwanted wrapper method&#xA;    void doSomething()&#xA;    {&#xA;        tA::doSomething&amp;lt;T&amp;gt;();&#xA;    }&#xA;};&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;hr&gt;&#xA;&#xA;&lt;h2&gt;Usage&lt;/h2&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;int main()&#xA;{&#xA;    std::cout &amp;lt;&amp;lt; &quot;Dynamic usage:&quot; &amp;lt;&amp;lt; std::endl;&#xA;&#xA;    tA dynamicUsage{};&#xA;    dynamicUsage.doSomething&amp;lt;bool&amp;gt;();  // &quot;Does something default&quot;&#xA;    dynamicUsage.doSomething&amp;lt;int&amp;gt;();   // &quot;Does something int&#x27;y&quot;&#xA;    dynamicUsage.doSomething&amp;lt;float&amp;gt;(); // &quot;Does something float&#x27;y&quot;&#xA;&#xA;    std::cout &amp;lt;&amp;lt; &quot;\nStatic usage:&quot; &amp;lt;&amp;lt; std::endl;&#xA;&#xA;    tB&amp;lt;int&amp;gt; staticUsage{};&#xA;    staticUsage.doSomething();         // &quot;Does something int&#x27;y&quot;&#xA;&#xA;    staticUsage.tA::doSomething&amp;lt;float&amp;gt;(); // This also works due to public inhertiance.&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205845</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">How can I access the callbacks stored in a pybind::list?</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="pybind11" />
+        <author>
+            <name>Rika</name>
+            <uri>https://stackoverflow.com/users/2736559</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205845/how-can-i-access-the-callbacks-stored-in-a-pybindlist" />
+        <published>2020-04-14T10:44:36Z</published>
+        <updated>2020-04-14T11:03:01Z</updated>
+        <summary type="html">
+            &lt;p&gt;I create callbacks in my &lt;code&gt;C&#x2B;&#x2B;&lt;/code&gt; wrapper which I then send to my python module and they get executed just fine.&lt;br&gt;&#xA;However, since I have a list of callbacks and it can be updated, I want to retrieve the list of callbacks currently in use from the &lt;code&gt;Python&lt;/code&gt; module and save it in a C&#x2B;&#x2B; vector.&lt;br&gt;&#xA;&lt;code&gt;py::print()&lt;/code&gt; shows the list just fine, but I want to be able to access each item in the list individually and use them as I wish, I don&#x27;t want to print them on the screen.&lt;br&gt;&#xA;I tried iterating over the &lt;code&gt;py::list&lt;/code&gt; and get each item that way, but they are practically useless in their raw form. Each item is a &lt;code&gt;py::handle&lt;/code&gt; it seems and I don&#x27;t know which property can be used to get the callback object or its reference or even a string representation of the callback (just like the one we get when we print the list using &lt;code&gt;py::print&lt;/code&gt;))&lt;/p&gt;&#xA;&#xA;&lt;p&gt;How should I go about this?  &lt;/p&gt;&#xA;&#xA;&lt;p&gt;Note:&lt;br&gt;&#xA;Clearly I can have a second list in C&#x2B;&#x2B; side and simply use this list instead of getting them from &lt;code&gt;Python&lt;/code&gt;, but this way I can&#x27;t know about the internal Python callbacks. I can only keep track of the callbacks sent from C&#x2B;&#x2B;.&lt;br&gt;&#xA;apart from that I also want to do this, so I can get better intuition about &lt;code&gt;Pybin11&lt;/code&gt; and how things can be done. &lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205814</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Using a template class in multiple classes in C&#x2B;&#x2B;</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="class" />
+            <category scheme="https://stackoverflow.com/tags" term="templates" />
+        <author>
+            <name>CosmicCoder123</name>
+            <uri>https://stackoverflow.com/users/12380746</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205814/using-a-template-class-in-multiple-classes-in-c" />
+        <published>2020-04-14T10:42:58Z</published>
+        <updated>2020-04-14T11:19:35Z</updated>
+        <summary type="html">
+            &lt;p&gt;Suppose I have 3 classes as shown&lt;a href=&quot;https://i.stack.imgur.com/eIe1s.png&quot; rel=&quot;nofollow noreferrer&quot;&gt;&lt;img src=&quot;https://i.stack.imgur.com/eIe1s.png&quot; alt=&quot;enter image description here&quot;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Instead of the functions in the object class I would like to create a single template function which can take the place of the two functions in the object class.  The issue I am having is I do not know how to allow the template function to take arguments either of type modifier_1 or type modifier_2.  Is there a way to do this?&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Thank you.&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205760</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Open Chrome Browser in current user context from administrator privileges application</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="google-chrome" />
+        <author>
+            <name>Santosh Salunke</name>
+            <uri>https://stackoverflow.com/users/12337410</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205760/open-chrome-browser-in-current-user-context-from-administrator-privileges-applic" />
+        <published>2020-04-14T10:40:05Z</published>
+        <updated>2020-04-14T10:40:05Z</updated>
+        <summary type="html">
+            &lt;p&gt;My application is running under admin privileges after button click &quot;Google Chrome browser&quot; get open.&#xA;But browser open under &quot;admin privileges&quot; instead of current user context.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I want to open browser under current user context.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;em&gt;Other browsers are well working such as Mozilla and Microsoft edge.&lt;/em&gt;&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205756</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">SQLConfigDataSource does not add System DSN for 64-bit drivers</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="dll" />
+            <category scheme="https://stackoverflow.com/tags" term="odbc" />
+            <category scheme="https://stackoverflow.com/tags" term="64-bit" />
+        <author>
+            <name>overkail</name>
+            <uri>https://stackoverflow.com/users/12828004</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205756/sqlconfigdatasource-does-not-add-system-dsn-for-64-bit-drivers" />
+        <published>2020-04-14T10:39:53Z</published>
+        <updated>2020-04-14T10:39:53Z</updated>
+        <summary type="html">
+            &lt;p&gt;I load the odbccp32.dll from &lt;code&gt;System32&lt;/code&gt; and even tried to use from &lt;code&gt;SysWow64&lt;/code&gt;. I use &lt;code&gt;SQLConfigDataSource&lt;/code&gt; function to configure my System DSN for specified Driver. This function successfully configure drivers which are 32-bit, but does not do the same  for 64-bit drivers. Does this &lt;code&gt;dll&lt;/code&gt; only works for drivers which are 32-bit? When I ran ODBC  Administrator tool (64-bit) I am able to see the 64-bit drivers and add them manually to System DSN, but I cannot do this using this &lt;code&gt;DLL&lt;/code&gt;. &lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205726</id>
+        <re:rank scheme="https://stackoverflow.com">2</re:rank>
+        <title type="text">What is the difference in using forward and reverse iterators in find_if</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="stl" />
+        <author>
+            <name>Alex Leitsin</name>
+            <uri>https://stackoverflow.com/users/5736041</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205726/what-is-the-difference-in-using-forward-and-reverse-iterators-in-find-if" />
+        <published>2020-04-14T10:38:09Z</published>
+        <updated>2020-04-14T11:34:04Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have two functions (an example from a book):&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;std::string trim_right(std::string s)&#xA;{&#xA;    s.erase(std::find_if(s.rbegin(), s.rend(), isalpha).base(),s.end() );&#xA;&#xA;    return s;&#xA;} &#xA;std::string trim_left(std::string s)&#xA;{&#xA;    s.erase(s.begin(),&#xA;        std::find_if(s.begin(), s.end(), isalpha));&#xA;    return s;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Why in function &lt;code&gt;trim_right&lt;/code&gt; with reverse iterators I need to use &lt;code&gt;base()&lt;/code&gt;, but in &lt;code&gt;trim_left&lt;/code&gt; with forward iterators I don&#x27;t need it ?&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205632</id>
+        <re:rank scheme="https://stackoverflow.com">-1</re:rank>
+        <title type="text">How to show images on qlineedit?</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="windows" />
+            <category scheme="https://stackoverflow.com/tags" term="qt" />
+        <author>
+            <name>yuchang xu</name>
+            <uri>https://stackoverflow.com/users/7384409</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205632/how-to-show-images-on-qlineedit" />
+        <published>2020-04-14T10:33:07Z</published>
+        <updated>2020-04-14T10:33:07Z</updated>
+        <summary type="html">
+            &lt;p&gt;Like telegram desktop nickname editing, support emoji image character/picture editing.&lt;a href=&quot;https://i.stack.imgur.com/ObBA1.png&quot; rel=&quot;nofollow noreferrer&quot;&gt;enter image description here&lt;/a&gt;&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205579</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Using Dynamic-Programming to solve the Beautiful Subsequeces Problem [closed]</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="c" />
+            <category scheme="https://stackoverflow.com/tags" term="dynamic-programming" />
+        <author>
+            <name>NulBlk</name>
+            <uri>https://stackoverflow.com/users/13310181</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205579/using-dynamic-programming-to-solve-the-beautiful-subsequeces-problem" />
+        <published>2020-04-14T10:30:30Z</published>
+        <updated>2020-04-14T10:30:30Z</updated>
+        <summary type="html">
+            &lt;p&gt;&quot;Given an integer m, we consider a sequence (with at least 2 elements) as beautiful if it contains 2 neighbors with difference no larger than m. Given an integer sequence with n elements, your job is to calculate the number of beautiful subsequences in it. &quot;&#xA;How can I solve it with DP?&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205367</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Blobs in MongoCxx</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="mongodb" />
+            <category scheme="https://stackoverflow.com/tags" term="mongo-cxx-driver" />
+        <author>
+            <name>Aziuth</name>
+            <uri>https://stackoverflow.com/users/5114342</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205367/blobs-in-mongocxx" />
+        <published>2020-04-14T10:17:53Z</published>
+        <updated>2020-04-14T10:32:33Z</updated>
+        <summary type="html">
+            &lt;p&gt;I&#x27;m currently trying to write C&#x2B;&#x2B; functions which allow me to put and get blobs (binary large objects) into and from a MongoDB database.&lt;br&gt;&#xA;The final goal is to have two functions similar to this:  &lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;QString store_blob(const QString&amp;amp; mongodb_uri, const QByteArray&amp;amp; blob, const QString&amp;amp; target_id = &quot;&quot;);&#xA;QByteArray retrieve_blob(const QString&amp;amp; mongodb_uri, const QString&amp;amp; id);&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;(The Qt types are irrelevant for this question.)&lt;/p&gt;&#xA;&#xA;&lt;p&gt;The blobs in question will initially be something like the binary data of a PNG, but later I will have to store the data of bigger voxel images (possibly several million cells, all of which can hold a block of data, in other words, a large file).&lt;br&gt;&#xA;Thus, I want to make those functions efficient, using up as little as possible server space, have as little as possible data being send over the network, and as a secondary goal, have as little as possible copying in my program (although this last one is probably not a chokepoint).&lt;/p&gt;&#xA;&#xA;&lt;p&gt;For that, I use the mongocxx-driver. The problem now is that I found nothing so far how to specifically store blobs.&lt;br&gt;&#xA;Tutorials like &lt;a href=&quot;http://mongocxx.org/mongocxx-v3/tutorial/&quot; rel=&quot;nofollow noreferrer&quot;&gt;this&lt;/a&gt; or &lt;a href=&quot;http://mongocxx.org/mongocxx-v3/working-with-bson/&quot; rel=&quot;nofollow noreferrer&quot;&gt;this&lt;/a&gt; seem to focus on plain data, with only small arrays.&lt;br&gt;&#xA;And sadly, most entries in the &lt;a href=&quot;http://mongocxx.org/api/current/classbsoncxx_1_1array_1_1value.html&quot; rel=&quot;nofollow noreferrer&quot;&gt;documentation&lt;/a&gt; do not offer much information.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;My current tests try to work with the regular array class:&lt;br&gt;&#xA;Test for writing data:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;bsoncxx::types::b_oid write_blob()&#xA;{&#xA;    mongocxx::uri uri(&quot;mongodb://localhost:27017&quot;);&#xA;    mongocxx::client client(uri);&#xA;    mongocxx::database database = client[&quot;test_database&quot;];&#xA;    mongocxx::collection collection = database[&quot;test_collection&quot;];&#xA;&#xA;    std::vector&amp;lt;uint8_t&amp;gt; elements = {7, 8, 9};&#xA;    auto doc = bsoncxx::builder::basic::document{};&#xA;    doc.append(bsoncxx::builder::basic::kvp(&quot;data&quot;, [&amp;amp;elements](bsoncxx::builder::basic::sub_array child) {&#xA;        for (const auto&amp;amp; element : elements) {&#xA;            child.append(element);&#xA;        }&#xA;    }));&#xA;&#xA;    bsoncxx::document::value value = doc.extract();&#xA;&#xA;    bsoncxx::stdx::optional&amp;lt;mongocxx::result::insert_one&amp;gt; result =&#xA;        collection.insert_one(value.view());&#xA;&#xA;    std::cout &amp;lt;&amp;lt; &quot;id is: &quot; &amp;lt;&amp;lt; result-&amp;gt;inserted_id().get_oid().value.to_string() &amp;lt;&amp;lt; std::endl;&#xA;&#xA;    return result-&amp;gt;inserted_id().get_oid();&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Test for receiving data:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;void read_blob(bsoncxx::types::b_oid id)&#xA;{&#xA;    mongocxx::uri uri(&quot;mongodb://localhost:27017&quot;);&#xA;    mongocxx::client client(uri);&#xA;    mongocxx::database database = client[&quot;test_database&quot;];&#xA;    mongocxx::collection collection = database[&quot;test_collection&quot;];&#xA;&#xA;    bsoncxx::stdx::optional&amp;lt;bsoncxx::document::value&amp;gt; value = collection.find_one(&#xA;        bsoncxx::builder::stream::document{} &amp;lt;&amp;lt; &quot;_id&quot; &amp;lt;&amp;lt; id &amp;lt;&amp;lt; bsoncxx::builder::stream::finalize);&#xA;&#xA;    for(size_t i=0; i&amp;lt;value-&amp;gt;view()[&quot;data&quot;].length(); i&#x2B;&#x2B;)&#xA;    {&#xA;        if(value-&amp;gt;view()[&quot;data&quot;][i].type() == bsoncxx::type::k_int32)&#xA;        {&#xA;            std::cout &amp;lt;&amp;lt; value-&amp;gt;view()[&quot;data&quot;][i].get_int32() &amp;lt;&amp;lt; std::endl;&#xA;        }&#xA;    }&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;My issues with those are:&lt;/p&gt;&#xA;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;I am not sure whether those are stored and delivered efficiently.&lt;/li&gt;&#xA;&lt;li&gt;I am not sure how close this is to best practice.&lt;/li&gt;&#xA;&lt;li&gt;Initially, I start with a &lt;code&gt;vector&lt;/code&gt; over &lt;code&gt;uint8_t&lt;/code&gt;, indicating that I hope to directly insert a byte sized type into the array. However, as the receiving end code shows, what is actually stored are 32 bit integers. I could pack four bytes into one such integer, but I hope to do it more directly. Also, this would require me to additional store the actual byte size in a field, as the actual byte size might not be divisible by four.&lt;/li&gt;&#xA;&lt;li&gt;The code as it is has a bug: the iteration in the receiving function goes out of bound. &lt;code&gt;length()&lt;/code&gt; returns the size of the array, which in my example has the odd length of 54 (a value I can&#x27;t really explain, as three integers of four bytes would have 12 bytes = 96 bits, which makes me supspect the array being stored in ASCII with delimiters). Now, I could store the amount of bytes as an additional field, but this feels dirty. Is there a more efficient way to do so? I haven&#x27;t seen any method like &lt;code&gt;size()&lt;/code&gt; that actually returns the amount of entries in the documentation.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;p&gt;Ideally, I hope that somebody rewrites my test functions.&lt;br&gt;&#xA;Note that I am quite new to working with mongocxx-driver, or database libraries in general.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&quot;https://community.mongodb.com/t/mongocxx-how-to-insert-blobs/2431/2&quot; rel=&quot;nofollow noreferrer&quot;&gt;Also note that I already asked this question in the mongoDB forums.&lt;/a&gt;&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205356</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">K smallest pair distance LEETCODE PROBLEM</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="binary-search" />
+        <author>
+            <name>Krishan Kumar</name>
+            <uri>https://stackoverflow.com/users/12655179</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205356/k-smallest-pair-distance-leetcode-problem" />
+        <published>2020-04-14T10:17:04Z</published>
+        <updated>2020-04-14T10:17:04Z</updated>
+        <summary type="html">
+            &lt;blockquote&gt;&#xA;  &lt;p&gt;I was solving this leetcode hard problem &lt;/p&gt;&#xA;  &#xA;  &lt;p&gt;Given an integer array, return the k-th smallest distance among all&#xA;  the pairs. The distance of a pair (A, B) is defined as the absolute&#xA;  difference between A and B.&lt;/p&gt;&#xA;  &#xA;  &lt;p&gt;Input: nums = [1,3,1] k = 1 Output: 0  Explanation: Here are all the&#xA;  pairs: (1,3) -&gt; 2 (1,1) -&gt; 0 (3,1) -&gt; 2 Then the 1st smallest distance&#xA;  pair is (1,1), and its distance is 0.&lt;/p&gt;&#xA;  &#xA;  &lt;p&gt;I tried binary search on it but its only passing 13 cases of 19 &#xA;  failing on below test case: [38,33,57,65,13,2,86,75,4,56] 26&lt;/p&gt;&#xA;  &#xA;  &lt;p&gt;output : 35     expected : 36&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;class Solution {&#xA;&#xA;    int check(vector&amp;lt;int&amp;gt;nums,int mid)&#xA;    {&#xA;        int j=0;&#xA;        int count=0;&#xA;        for(int i=0;i&amp;lt;nums.size();i&#x2B;&#x2B;)&#xA;        {&#xA;            while(j&amp;lt;nums.size() &amp;amp;&amp;amp;  i&amp;lt;=j &amp;amp;&amp;amp; nums[j]-nums[i]&amp;lt;=mid  )&#xA;            {&#xA;                count&#x2B;= j - i;&#xA;                cout&amp;lt;&amp;lt; count&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;j&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;i&amp;lt;&amp;lt; endl;&#xA;                j&#x2B;&#x2B;;&#xA;            }&#xA;        }&#xA;//        cout&amp;lt;&amp;lt;&quot;count&quot;&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;count&amp;lt;&amp;lt;endl;&#xA;        return count;&#xA;&#xA;    }&#xA;&#xA;&#xA;&#xA;    public:&#xA;     int smallestDistancePair(vector&amp;lt;int&amp;gt;&amp;amp;nums, int k) {&#xA;            sort(nums.begin(),nums.end());&#xA;         int s=0;&#xA;         int e=nums[nums.size()-1]-nums[0];&#xA;             int ans=0;&#xA;         while(s&amp;lt;=e)&#xA;         {&#xA;             int mid= (s&#x2B;e)/2;&#xA;&#xA;             ans=mid;&#xA;//             cout&amp;lt;&amp;lt;s&amp;lt;&amp;lt;&quot; &quot;&amp;lt;&amp;lt;e&amp;lt;&amp;lt;&quot; &quot; &amp;lt;&amp;lt;ans&amp;lt;&amp;lt;endl;&#xA;             int v=check(nums,mid);&#xA;             if(v &amp;gt;=k)&#xA;             {&#xA;                 e=mid-1;&#xA;             }&#xA;             else{&#xA;                 s=mid&#x2B;1;&#xA;             }&#xA;&#xA;         }&#xA;         return ans;&#xA;&#xA;&#xA;    }&#xA;};&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/61205167</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">Please explain me why the size of the template class object is coming 8 if i am passing the datas to be integer and char in the program? [duplicate]</title>
+            <category scheme="https://stackoverflow.com/tags" term="c&#x2B;&#x2B;" />
+            <category scheme="https://stackoverflow.com/tags" term="templates" />
+        <author>
+            <name>Ankur Paul</name>
+            <uri>https://stackoverflow.com/users/10832537</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/61205167/please-explain-me-why-the-size-of-the-template-class-object-is-coming-8-if-i-am" />
+        <published>2020-04-14T10:06:05Z</published>
+        <updated>2020-04-14T10:06:05Z</updated>
+        <summary type="html">
+            &lt;p&gt;Please explain me why the size of the template class object is coming 8 if i am passing the datas to be integer and char in the program? Below code has a template class and one of the default parameter type to be char. My expectations were, 4(size of int) &#x2B; 1(size of char) = 5 but the output seems to be 8. Somebody please explain me this.&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;#include &amp;lt;iostream&amp;gt;&#xA;&#xA;template &amp;lt;typename Data=int, typename Data2=char&amp;gt;&#xA;class Base&#xA;{&#xA;public:&#xA;    Data x;&#xA;    Data2 y;&#xA;    Base(Data a, Data2 b);&#xA;};&#xA;&#xA;template &amp;lt;typename Data, typename Data2&amp;gt;&#xA;Base&amp;lt;Data, Data2&amp;gt;::Base(Data a, Data2 b)&#xA;{&#xA;    std::cout &amp;lt;&amp;lt; &quot;The values received are &quot; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; &quot; and &quot; &amp;lt;&amp;lt; b &amp;lt;&amp;lt; std::endl;&#xA;}&#xA;&#xA;int main()&#xA;{&#xA;    Base&amp;lt;int&amp;gt; a1(2,87);&#xA;    std::cout &amp;lt;&amp;lt; &quot;Size of object: &quot; &amp;lt;&amp;lt; sizeof(a1) &amp;lt;&amp;lt; std::endl;&#xA;    return 0;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;OUTPUT APPEARS TO BE&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&quot;https://i.stack.imgur.com/ToYPo.png&quot; rel=&quot;nofollow noreferrer&quot;&gt;&lt;img src=&quot;https://i.stack.imgur.com/ToYPo.png&quot; alt=&quot;OUTPUT IMAGE&quot;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;
+        </summary>
+    </entry>
+</feed>
