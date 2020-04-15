@@ -3,7 +3,7 @@
 #include <typeinfo>
 
 /* My */
-/*
+
 void print_values(std::ostream &) 
 {}
 
@@ -14,7 +14,6 @@ void print_values(std::ostream & os, const T &value, const Args &... args)
     os << typeid(value).name() << ": " << value << std::endl;
     print_values(os, args...);
 }
-*/
 
 /* C++17
 template <typename... Args>

@@ -1,68 +1,62 @@
 #include <iostream>
 
-    const int N = 10;
+int * partition(int *start, int *end) {
+    bool go_forward = true;
 
-int *needed_place(int *start, int *end) {
-    bool check_ringt = true;
-
-    while (start != end) {
-        if (check_ringt) {
-            if (*start > *end) {
-                // std::cout << *start << " > " << *end << std::endl;
-                std::swap(*start, *end);
-                check_ringt = false;
-                end--;
-            } else {
-                start++;
-            }
+    while (start < end) {
+        if (*start > *end) {
+            std::swap(*start, *end);
+            go_forward ? end-- : start++;
+            go_forward = !go_forward;
         } else {
-            if (*end < *start) {
-                // std::cout << *start << " > " << *end << std::endl;
-                std::swap(*start, *end);
-                check_ringt = true;
-                start++;
-            } else {
-                end--;
-            }
+            go_forward ? start++ : end--;
         }
     }
     return end;
 }
 
 void m_qsort(int *start, int *end) {
-    int *center = needed_place(start, end - 1);
 
-    std::cout << *center << std::endl;
-    for (int i = 0; i < N; i++) {
-        std::cout << start[i] << " ";
-    }
-    std::cout << std::endl;
+    // int size = ((unsigned long long int)(end) - (unsigned long long int)(start)) / sizeof(int) + 1;
 
-    // if (start != center - 1)
-        m_qsort(start, center);
-    // if (center + 1 != end - 1);
+    // for (int i = 0; i < size; i++) {
+    //     std::cout << start[i] << " ";
+    // }
+    // std::cout << std::endl;
+
+    int *center = partition(start, end);
+
+    if (start != center)
+        m_qsort(start, center - 1);
+    if (end != center)
         m_qsort(center + 1, end);
 }
 
+void bubble_sort(int *start, int *end) {
+
+    for (int *i = start; i < end; i++)
+        for (int *j = start; j < end; j++)
+            if (*j > *(j + 1))
+                std::swap(*j, *(j + 1) );
+}
 
 int main() {
 
+    const int num_elem = 50;
+    int max_elem = 100;
 
-    int max = 10;
-    int data[N] = {3, 1, 6, 3, 6, 3, 7, 3, 8, 6};
 
-    // for (int i = 0; (i < N -1); i++) {
-    //     for (int j = 0; j < N - 1 - i; j++)
-    //         if (data[j] > data[j + 1]) {
-    //             std::swap(data[j], data[j + 1]);
-    //         }
-    // }
+    int *data = new int[num_elem];
+    for (int i = 0; i < num_elem; i++) {
+        data[i] = rand() % max_elem;
+    }
 
-    m_qsort(data, data + N);
+    m_qsort(&data[0], &data[num_elem - 1]);
+    // bubble_sort(&data[0], &data[num_elem - 1]);
 
-    // int *center = needed_place(data, data + N - 1);
+    // partition(&data[0], &data[num_elem - 1]);
 
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < num_elem; i++) {
         std::cout << data[i] << " ";
     }
     std::cout << std::endl;
