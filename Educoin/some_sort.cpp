@@ -71,7 +71,6 @@ int * find_medium(int *start, int *end, int part) {
 
 int * partition(int *start, int *end) {
     bool go_forward = true;
-    // int *real_start = start;
 
     while (start < end) {
         if (*start > *end) {
@@ -82,9 +81,6 @@ int * partition(int *start, int *end) {
             go_forward ? start++ : end--;
         }
     }
-
-    // int value = *end;
-
     return end;
 }
 
@@ -212,7 +208,7 @@ int main() {
     int max_elem = 100000;
     int thread_num = 2;
 
-    srand (time(NULL)); 
+    srand (time(NULL));
 
 
     int *data = new int[num_elem];// {4, 4, 4, 3, 4, 4, 4, 4, 4, 4};
